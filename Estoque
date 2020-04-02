@@ -1,0 +1,57 @@
+package estoque;
+
+import java.util.Scanner;
+import estoque.Produto;
+
+public class Estoque {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Produto produto;
+       
+        System.out.println("ENTRE COM O NOME DO PRODUTO:");
+        String nome = input.nextLine();
+        
+        System.out.println("INSIRA O PREÇO:");
+        double preço = input.nextDouble();
+        
+        System.out.println("INSIRA A QUANTIDADE NO ESTOQUE:");
+        int quantidade = input.nextInt();
+        
+       produto = new Produto (nome, preço, quantidade);
+        
+        System.out.println(produto);
+        
+        System.out.println("");
+        System.out.println("DESEJA ADICIONAR PRODUTO (S/N)?");
+        char resposta = input.next().charAt(0);
+        if (resposta == 's' || resposta == 'S'){
+            System.out.println("INSIRA O NUMERO A SER ADICIONADO:");
+            int quatidade = input.nextInt();
+            produto.adicionarproduto(quantidade); 
+            
+            System.out.println(produto);
+            
+             System.out.println("");
+        System.out.println("DESEJA REMOVER PRODUTO (S/N)?");
+        char resposta2 = input.next().charAt(0);
+        if (resposta2 == 's' || resposta2 == 'S'){
+            System.out.println("INSIRA O NUMERO A SER REMOVIDO:");
+            quantidade = input.nextInt();
+            produto.removerproduto(quantidade); 
+            
+            System.out.println(produto);
+            
+            
+        
+        }
+    
+    
+    
+    }
+    
+    
+    }   
+    
+}

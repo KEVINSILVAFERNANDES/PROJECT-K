@@ -1,0 +1,60 @@
+
+package estoque;
+
+
+public class Produto {
+    
+    private String nome;
+    private double preço;
+    private int quantidade;
+
+    public Produto() {
+    }
+
+    public Produto(String nome, double preço, int quantidade) {
+        this.nome = nome;
+        this.preço = preço;
+        this.quantidade = quantidade;
+    }
+
+   
+    public String getNome() {
+        return nome;
+    }
+
+    
+    public double getPreço() {
+        return preço;
+    }
+
+   
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+   
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    
+    public double valortotal(){
+    return preço * quantidade;
+    }
+   
+    public void adicionarproduto(int quantidade){
+    this.quantidade += quantidade;
+    }
+   
+    public void removerproduto(int quantidade){
+    this.quantidade -= quantidade;
+    }
+
+   
+    public String toString() {
+        return "PRODUTO:"+","+ nome+", "+
+                "PREÇO:"+",$"+ preço+", "+
+                "VALOR TOTAL NO ESTOQUE:"+ ","+valortotal();
+    }
+    
+    
+}
